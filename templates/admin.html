@@ -1,0 +1,42 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <meta charset="utf-8" />
+  <title>Career Guidance — Admin</title>
+  <link rel="stylesheet" href="/static/style.css">
+</head>
+<body>
+  <div class="container">
+    <h1>Admin Dashboard</h1>
+    <div class="tablewrap">
+      <table>
+        <thead>
+          <tr>
+            <th>ID</th><th>Name</th>
+            <th>English</th><th>Math</th><th>Science</th><th>History</th><th>Geography</th>
+            <th>Interest</th><th>Predicted Career</th><th>Confidence %</th><th>When</th>
+          </tr>
+        </thead>
+        <tbody>
+          {% for r in rows %}
+          <tr>
+            <td>{{ r["id"] }}</td>
+            <td>{{ r["name"] }}</td>
+            <td>{{ r["english"] }}</td>
+            <td>{{ r["math"] }}</td>
+            <td>{{ r["science"] }}</td>
+            <td>{{ r["history"] }}</td>
+            <td>{{ r["geography"] }}</td>
+            <td>{{ r["interest"] }}</td>
+            <td>{{ r["predicted_career"] }}</td>
+            <td>{{ "%.2f"|format(r["confidence"]) }}</td>
+            <td>{{ r["created_at"] }}</td>
+          </tr>
+          {% endfor %}
+        </tbody>
+      </table>
+    </div>
+    <p><a href="/">Back</a></p>
+  </div>
+</body>
+</html>

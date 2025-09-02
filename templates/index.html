@@ -1,0 +1,45 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <meta charset="utf-8" />
+  <title>Career Guidance — Input</title>
+  <link rel="stylesheet" href="/static/style.css">
+</head>
+<body>
+  <div class="container">
+    <h1>Career Guidance — Student Form</h1>
+    <form action="/predict" method="post" class="card">
+      <label>Name</label>
+      <input type="text" name="name" required>
+
+      <label>English</label>
+      <input type="number" step="0.01" name="English" required>
+
+      <label>Math</label>
+      <input type="number" step="0.01" name="Math" required>
+
+      <label>Science</label>
+      <input type="number" step="0.01" name="Science" required>
+
+      <label>History</label>
+      <input type="number" step="0.01" name="History" required>
+
+      <label>Geography</label>
+      <input type="number" step="0.01" name="Geography" required>
+
+      <label>Interest</label>
+      <select name="Interest" required>
+        {% for opt in allowed_interests %}
+          <option value="{{ opt }}">{{ opt }}</option>
+        {% endfor %}
+      </select>
+
+      <button type="submit">Get Recommendation</button>
+    </form>
+
+    <p style="margin-top:16px;">
+      <a href="/admin">Admin dashboard</a>
+    </p>
+  </div>
+</body>
+</html>
